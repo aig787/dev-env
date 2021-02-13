@@ -1,15 +1,6 @@
-zsh << 'HERE'
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-HERE
-
 DEV_ENV_DIR=$(dirname "$0")
 
-ln -s -f $DEV_ENV_DIR/p10k.zsh ~/.p10k.zsh
 ln -s -f $DEV_ENV_DIR/zshrc ~/.zshrc
-ln -s -f $DEV_ENV_DIR/zpreztorc ~/.zpreztorc
 
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 cp ~/.tmux/.tmux.conf.local ~/
