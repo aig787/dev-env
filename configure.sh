@@ -1,9 +1,9 @@
-DEV_ENV_DIR=$(dirname "$0")
+DEV_ENV_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 ln -s -f $DEV_ENV_DIR/zshrc ~/.zshrc
 
-ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
-cp ~/.tmux/.tmux.conf.local ~/
+ln -s -f $DEV_ENV_DIR/.tmux/.tmux.conf ~/.tmux.conf
+cp $DEV_ENV_DIR/.tmux/.tmux.conf.local ~/
 
 if [ ! -z "$DOTFILES_REPO" ]; then
   git clone $DOTFILES_REPO $DEV_ENV_DIR/.dotfiles

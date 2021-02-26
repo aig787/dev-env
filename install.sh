@@ -1,5 +1,7 @@
-mkdir -p .workdir
-cd .workdir
+DEV_ENV_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+mkdir -p $DEV_ENV_DIR/.workdir
+cd $DEV_ENV_DIR/.workdir
 
 # Install fonts
 NERDFONTS_VERSION="v2.1.0"
@@ -12,6 +14,8 @@ do
 done
 curl -Lo nerd_install.sh https://raw.githubusercontent.com/ryanoasis/nerd-fonts/v2.1.0/install.sh | bash -s
 
+cd $DEV_ENV_DIR
+rm -rf .workdir
 
 git clone https://github.com/gpakosz/.tmux.git
 
@@ -21,5 +25,3 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 curl -fsSL https://starship.rs/install.sh | sudo bash -s -- --yes
 
-cd ..
-rm -rf .workdir

@@ -4,4 +4,4 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-
+eval "$(starship init zsh)"
