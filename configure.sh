@@ -1,4 +1,6 @@
-DEV_ENV_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+#/bin/bash
+
+DEV_ENV_DIR="$( cd "$( dirname "${BASH_SOURCE:-$0}" )" >/dev/null 2>&1 && pwd )"
 
 ln -s -f $DEV_ENV_DIR/zshrc ~/.zshrc
 
